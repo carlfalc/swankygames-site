@@ -1,0 +1,28 @@
+body{margin:0}
+a{color:#c8ff2e}a:hover{color:#ffffff}
+.pop{transition:transform .2s cubic-bezier(.2,1.6,.4,1),box-shadow .2s ease}
+.pop:hover,.pop:focus-visible{transform:translateY(-7px) scale(1.09)}
+.chip:hover,.chip:focus-visible{box-shadow:6px 6px 0 #ff3d8b}
+.cta:hover,.cta:focus-visible{box-shadow:6px 6px 0 #ffffff}
+.sw-scene{perspective:1200px}
+.sw-tilt{transform-style:preserve-3d;transform:rotateX(-16deg)}
+@keyframes sw-spin{from{transform:rotateY(1772deg)}to{transform:rotateY(-28deg)}}
+.sw-spin{transform-style:preserve-3d;transform:rotateY(-28deg);animation:sw-spin 3.6s cubic-bezier(.06,.62,.1,1) both}
+.sw-cube{position:relative;width:300px;height:300px;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.9,.2,1)}
+
+.sw-face{position:absolute;left:0;top:0;width:300px;height:300px;box-sizing:border-box;overflow:hidden;border:4px solid #09090e;border-radius:18px;backface-visibility:hidden}
+.sw-flip{perspective:1800px}
+.sw-flip-inner{position:relative;height:540px;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.85,.2,1)}
+.sw-flip:hover .sw-flip-inner,.sw-flip:focus-within .sw-flip-inner{transform:rotateY(180deg)}
+.sw-flip-face{position:absolute;left:0;top:0;right:0;bottom:0;backface-visibility:hidden;border-radius:32px;box-sizing:border-box;overflow:hidden}
+.sw-flip-back{transform:rotateY(180deg)}
+.sw-flip:hover .sw-flip-front{pointer-events:none}
+@media (prefers-reduced-motion:reduce){.sw-spin{animation:none}.sw-cube,.sw-flip-inner,.pop{transition:none}}
+.pop:hover,.pop:focus-visible{transform:translateY(-7px) scale(1.05)}
+@media (prefers-reduced-motion:reduce){.pop{transition:none}}
+html{scroll-behavior:smooth;background:#09090e}
+img{max-width:100%}
+.sw-flip:focus{outline:none}
+@media (max-width:520px){h1{word-break:break-word}}
+.sw-flip.is-flipped .sw-flip-inner{transform:rotateY(180deg)}
+.sw-flip.is-flipped .sw-flip-front{pointer-events:none}
